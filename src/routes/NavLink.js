@@ -5,7 +5,7 @@ function NavLink() {
     <div className="root-container">
       <div className="header">
         <h1 className="heading">
-          Space Traveler's Hub
+          Space Traveler&apos;s Hub
         </h1>
         <nav className="navbar">
           <ul className="nav-items">
