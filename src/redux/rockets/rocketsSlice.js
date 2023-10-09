@@ -79,15 +79,10 @@ const rocketsSlice = createSlice({
         state.error = action.error.message;
       });
     // .addCase(addRocketByThunk.fulfilled, (state, action) => {
-    // const { title, author } = action.meta.arg;
-    // state.rockets.push({
-
-    // });
-    //   console.log(state, action.payload)
+    //   console.log(state, action);
     // })
     // .addCase(removeRocketByThunk.fulfilled, (state, action) => {
-    //   console.log(state, action.payload)
-
+    //   console.log(state, action.payload);
     // });
   },
 });

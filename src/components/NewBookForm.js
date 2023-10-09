@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addBookByThunk } from '../redux/rockets/rocketsSlice';
+// import { useDispatch } from 'react-redux';
+// import { addRocketkByThunk } from '../redux/rockets/rocketsSlice';
 
 export default function NewBookForm() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     title: '',
     author: '',
@@ -25,7 +25,7 @@ export default function NewBookForm() {
     if (canSubmit) {
       try {
         setAddBookStatus('pending');
-        dispatch(addBookByThunk(formData)).unwrap();
+        // dispatch(addRocketkByThunk(formData)).unwrap();
         setFormData({
           title: '',
           author: '',
