@@ -1,0 +1,262 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  line-height: 1.5;
+  color: #121212;
+  background: #f5f6fa;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.root-container {
+  margin: 8rem 6rem;
+  width: 100%;
+  height: 120%;
+  background: rgb(250, 250, 250);
+}
+
+.store-container {
+  width: auto;
+  margin-top: 3rem;
+  padding: 0 6rem;
+}
+
+#bookstore {
+  background-color: rgb(250, 250, 250);
+  border: 0 solid #d3d3d3;
+  box-shadow: 3px 1px 10px 3px #d3d3d3;
+  border-radius: 4px;
+  height: 100%;
+  margin-bottom: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: auto;
+  background: #fff;
+  padding: 1.5rem 6rem;
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: rgb(36, 144, 255);
+}
+
+ul.nav-items {
+  display: flex;
+  gap: 1rem;
+}
+
+ul.nav-items li {
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+/* books */
+
+.book-card {
+  display: flex;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  padding: 1rem;
+  border: 1px solid #d3d3d3;
+}
+
+ul.l-book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  background: rgb(255, 255, 255);
+  list-style: none;
+}
+
+ul.l-book-card li {
+  margin: 0;
+}
+
+ul.interact1 {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1px;
+  list-style: none;
+}
+
+ul.interact1,
+.author {
+  color: rgb(36, 144, 255);
+}
+
+ul.interact1 li {
+  width: 80px;
+}
+
+.m-book-card {
+  align-self: flex-start;
+  width: 25%;
+  margin-top: 1rem;
+  height: 3rem;
+}
+
+.r-book-card {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  background: #fff;
+  margin-top: 1rem;
+}
+
+.author,
+.comments,
+.edit,
+.remove {
+  color: rgb(36, 144, 255);
+}
+
+/* add book form */
+
+.no-books {
+  text-align: center;
+  padding-top: 5%;
+}
+
+.newbookform-title {
+  padding-left: 1rem;
+}
+
+.form-container {
+  margin: 2rem;
+  margin-bottom: 3rem;
+}
+
+.newbookform {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booktitle {
+  width: 50%;
+  height: 2rem;
+  margin: 1.2rem auto;
+}
+
+.bookauthor {
+  width: 20%;
+  height: 2rem;
+  margin: 1.2rem auto;
+}
+
+.newbookform,
+.booktitle,
+.bookauthor {
+  border-radius: 4px;
+}
+
+.booktitle,
+.bookauthor {
+  padding: 0.5%;
+}
+
+.submitbtn {
+  width: 20%;
+  height: 2rem;
+  margin: 1.2rem auto;
+}
+
+/* update progress */
+.updatebtn,
+.submitbtn {
+  color: #fff;
+  background: rgb(36, 144, 255);
+  margin-top: 1rem;
+  width: 10rem;
+  padding: 1px;
+  height: 3rem;
+  border-radius: 4px;
+  border: none;
+}
+
+#error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.comment-btn,
+.edit-btn,
+.delete-btn {
+  width: 100%;
+  color: rgb(36, 144, 255);
+  background: #fff;
+  padding: 5%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid rgb(36, 144, 255);
+  box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
+}
+
+.comment-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
+  background: rgb(36, 144, 255);
+  color: #fff;
+}
+
+/* category */
+
+.category-container {
+  width: auto;
+  text-align: center;
+}
+
+.categories {
+  margin-top: 5%;
+}
