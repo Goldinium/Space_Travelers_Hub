@@ -53,6 +53,13 @@ const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
+    updateRocket: (state, action) => {
+      const rocketId = action.payload;
+      state.allrockets.map((rocket) => {
+        if (rocket.id === rocketId) return rocket;
+        return { ...rocket, reserved: true };
+      });
+    },
   },
 
   extraReducers: (builder) => {
@@ -65,12 +72,12 @@ const rocketsSlice = createSlice({
         const theRockets = (rocketsData = action.payload) => {
           const rocketsEntries = Object.entries(rocketsData);
           rocketsEntries.forEach((rocketEntry) => {
-            console.log(rocketEntry[1].flickr_images[0]);
             state.allrockets.push({
               id: rocketEntry[1].id,
               rocketname: rocketEntry[1].name,
               description: rocketEntry[1].description,
               flickrimages: rocketEntry[1].flickr_images[0],
+              reverved: false,
             });
           });
         };
@@ -79,12 +86,6 @@ const rocketsSlice = createSlice({
       .addCase(fetchRocketsByThunk.rejected, (state, action) => {
         state.isLoading = 'failed';
         state.error = action.error.message;
-      })
-    // .addCase(addRocketByThunk.fulfilled, (state, action) => {
-    //   console.log(state, action);
-    // })
-      .addCase(removeRocketByThunk.fulfilled, (state, action) => {
-        console.log(state, action.payload);
       });
   },
 });
@@ -93,6 +94,6 @@ export const allrockets = (state) => state.allrockets;
 export const rocketsloading = (state) => state.isLoading;
 
 export const {
-  extraReducers,
+  updateRocket, extraReducers,
 } = rocketsSlice.actions;
 export default rocketsSlice.reducer;

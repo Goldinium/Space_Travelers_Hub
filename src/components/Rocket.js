@@ -1,14 +1,12 @@
-import React from 'react';
-// import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { removeRocketByThunk } from '../redux/rockets/rocketsSlice';
+import { updateRocket } from '../redux/rockets/rocketsSlice';
 
 const Rocket = ({ rocket }) => {
   const {
     id, rocketname, description, flickrimages,
   } = rocket;
-
-  console.log(id);
 
   Rocket.propTypes = {
     rocket: PropTypes.node.isRequired,
@@ -18,7 +16,24 @@ const Rocket = ({ rocket }) => {
     flickrimages: PropTypes.node.isRequired,
   };
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  // const [reserveBtnStatus, setReserveBtnStatus] = useState(false);
+  const [reserveBtnText, setReserveBtnText] = useState('Reserve Rocket');
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((preValue) => ({
+  //     ...preValue, [name]: value,
+  //   }));
+  // };
+
+  const handleClick = () => {
+    // setAddBookStatus('pending');
+    setReserveBtnText('Cancel Reservation');
+    dispatch(updateRocket(id));
+    // setReserveBtnStatus(true)
+  };
 
   return (
     <div className="rocket-card">
@@ -27,14 +42,21 @@ const Rocket = ({ rocket }) => {
       </div>
       <ul className="rocket-details">
         <li><h2>{rocketname}</h2></li>
-        <li><p>{description}</p></li>
+        <li>
+          {/* <button
+          className={"btn-group pull-right " + (this.props.showBulkActions ? 'show' : 'hidden')
+        // }>
+        //    {reserved}
+          </button> */}
+          <p>{description}</p>
+        </li>
         <li className="btn-link">
           <button
             type="button"
             className="reserve-btn"
-            // onClick={dispatch(removeRocketByThunk(id))}
+            onClick={handleClick}
           >
-            Reserve Rocket
+            { reserveBtnText }
           </button>
         </li>
       </ul>
