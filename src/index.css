@@ -177,6 +177,26 @@ ul > li.btn-link {
   box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
 }
 
+.showbadge {
+  display: inline-block;
+  color: #fff;
+  background: rgb(48,161,184);
+  border-radius: 1px;
+  border: none;
+  padding: 0.3% 1%;
+  margin-right: 1%;
+}
+
+.hidebadge {
+  display: none;
+  /* color: #fff;
+  background: rgb(48,161,184);
+  border-radius: 1px;
+  border: none;
+  padding: 0.3% 1%;
+  margin-right: 1%; */
+}
+
 .reserve-btn:hover {
   background: #fff;
   color: blue;

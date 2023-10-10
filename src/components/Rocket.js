@@ -18,22 +18,23 @@ const Rocket = ({ rocket }) => {
 
   const dispatch = useDispatch();
 
-  // const [reserveBtnStatus, setReserveBtnStatus] = useState(false);
   const [reserveBtnText, setReserveBtnText] = useState('Reserve Rocket');
   const [reserveBtnClass, setReserveBtnClass] = useState('reserve-btn');
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((preValue) => ({
-  //     ...preValue, [name]: value,
-  //   }));
-  // };
+  const [reserveBtnBadge, setReserveBtnBadge] = useState('hidebadge');
 
   const handleClick = () => {
-    setReserveBtnText('Cancel Reservation');
-    setReserveBtnClass('reserve-btn-fade');
-    dispatch(updateRocket(id));
-    // setReserveBtnStatus(true)
+    if (reserveBtnText === 'Reserve Rocket') {
+      setReserveBtnText('Cancel Reservation');
+      setReserveBtnClass('reserve-btn-fade');
+      setReserveBtnBadge('showbadge');
+      dispatch(updateRocket(id));
+    }
+    if (reserveBtnText === 'Cancel Reservation') {
+      setReserveBtnText('Reserve Rocket');
+      setReserveBtnClass('reserve-btn');
+      setReserveBtnBadge('hidebadge');
+      dispatch(updateRocket(id));
+    }
   };
 
   return (
@@ -44,12 +45,12 @@ const Rocket = ({ rocket }) => {
       <ul className="rocket-details">
         <li><h2>{rocketname}</h2></li>
         <li>
-          {/* <button
-          className={"btn-group pull-right " + (this.props.showBulkActions ? 'show' : 'hidden')
-        // }>
-        //    {reserved}
-          </button> */}
-          <p>{description}</p>
+          <p>
+            <button type="button" className={reserveBtnBadge}>
+              reserved
+            </button>
+            {description}
+          </p>
         </li>
         <li className="btn-link">
           <button
