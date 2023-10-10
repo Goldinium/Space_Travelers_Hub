@@ -1,27 +1,44 @@
 import React from 'react';
 // import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { removeMission } from '../redux/rockets/rocketsSlice';
+// import { removeRocketByThunk } from '../redux/rockets/rocketsSlice';
 
 const Rocket = ({ rocket }) => {
-  // const {
-  //   itemId, title, author, category,
-  // } = misson;
+  const {
+    id, rocketname, description, flickrimages,
+  } = rocket;
 
-  console.log(rocket);
+  console.log(id);
 
   Rocket.propTypes = {
-    // itemId: PropTypes.string.isRequired,
     rocket: PropTypes.node.isRequired,
-    // category: PropTypes.string.isRequired,
-    // title: PropTypes.string.isRequired,
-    // author: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    rocketname: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    flickrimages: PropTypes.node.isRequired,
   };
 
   // const dispatch = useDispatch();
 
   return (
-    <div className="book-card" />
+    <div className="rocket-card">
+      <div className="rocket-image-container">
+        <img className="rocket-image" src={flickrimages} alt="A rocket" />
+      </div>
+      <ul className="rocket-details">
+        <li><h2>{rocketname}</h2></li>
+        <li><p>{description}</p></li>
+        <li className="btn-link">
+          <button
+            type="button"
+            className="reserve-btn"
+            // onClick={dispatch(removeRocketByThunk(id))}
+          >
+            Reserve Rocket
+          </button>
+        </li>
+      </ul>
+    </div>
   );
 };
 

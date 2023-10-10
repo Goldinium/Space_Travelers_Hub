@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
 // export const addRocketByThunk = createAsyncThunk(
@@ -19,18 +18,19 @@ import axios from 'axios';
 //   },
 // );
 
-// export const removeRocketByThunk = createAsyncThunk(
-//   'rockets/removeRocketByThunk',
-//   async (bookId, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.delete(bookId)(
-//         'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Om6k22yKr6fTJWoqUNAC/books');
-//       return response;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   },
-// );
+export const removeRocketByThunk = createAsyncThunk(
+  'rockets/removeRocketByThunk',
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.delete(id)(
+        'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Om6k22yKr6fTJWoqUNAC/books',
+      );
+      return response;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
 
 export const fetchRocketsByThunk = createAsyncThunk(
   'rockets/fetchRocketsByThunk',
@@ -53,10 +53,6 @@ const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
-    removeRockets: (state, action) => {
-      const itemId = action.payload;
-      state.allbooks = state.allbooks.filter((item) => item.itemId !== itemId);
-    },
   },
 
   extraReducers: (builder) => {
@@ -68,8 +64,14 @@ const rocketsSlice = createSlice({
         state.isLoading = 'succeeded';
         const theRockets = (rocketsData = action.payload) => {
           const rocketsEntries = Object.entries(rocketsData);
-          rocketsEntries.forEach((entry) => {
-            console.log(entry);
+          rocketsEntries.forEach((rocketEntry) => {
+            console.log(rocketEntry[1].flickr_images[0]);
+            state.allrockets.push({
+              id: rocketEntry[1].id,
+              rocketname: rocketEntry[1].name,
+              description: rocketEntry[1].description,
+              flickrimages: rocketEntry[1].flickr_images[0],
+            });
           });
         };
         theRockets();
@@ -77,13 +79,13 @@ const rocketsSlice = createSlice({
       .addCase(fetchRocketsByThunk.rejected, (state, action) => {
         state.isLoading = 'failed';
         state.error = action.error.message;
-      });
+      })
     // .addCase(addRocketByThunk.fulfilled, (state, action) => {
     //   console.log(state, action);
     // })
-    // .addCase(removeRocketByThunk.fulfilled, (state, action) => {
-    //   console.log(state, action.payload);
-    // });
+      .addCase(removeRocketByThunk.fulfilled, (state, action) => {
+        console.log(state, action.payload);
+      });
   },
 });
 

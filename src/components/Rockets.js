@@ -21,7 +21,7 @@ export default function Rockets() {
     <div className="books">
       {allrockets.length > 0 ? (
         <div className="book-container">
-          {allrockets.map((rocket) => <Rocket key={rocket.itemId} book={rocket} />)}
+          {allrockets.map((rocket) => <Rocket key={rocket.id} rocket={rocket} />)}
         </div>
       ) : (
         <p className="no-books">
