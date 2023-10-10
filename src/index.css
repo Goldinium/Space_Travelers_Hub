@@ -167,6 +167,16 @@ ul > li.btn-link {
   box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
 }
 
+.reserve-btn-fade {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: gray;
+  border-radius: 4px;
+  border: 1px solid rgb(36, 144, 255);
+  box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
+}
+
 .reserve-btn:hover {
   background: #fff;
   color: blue;
@@ -194,47 +204,7 @@ ul > li.btn-link {
   gap: 1rem;
 }
 
-.booktitle {
-  width: 50%;
-  height: 2rem;
-  margin: 1.2rem auto;
-}
-
-.bookauthor {
-  width: 20%;
-  height: 2rem;
-  margin: 1.2rem auto;
-}
-
-.newbookform,
-.booktitle,
-.bookauthor {
-  border-radius: 4px;
-}
-
-.booktitle,
-.bookauthor {
-  padding: 0.5%;
-}
-
-.submitbtn {
-  width: 20%;
-  height: 2rem;
-  margin: 1.2rem auto;
-}
-
-/* update progress */
-.updatebtn,
-.submitbtn {
-  color: #fff;
-  background: rgb(36, 144, 255);
-  margin-top: 1rem;
-  width: 10rem;
-  padding: 1px;
-  height: 3rem;
-  border-radius: 4px;
-  border: none;
-}
+/* error page */
 
 #error-page {
   display: flex;

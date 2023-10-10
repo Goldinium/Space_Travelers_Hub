@@ -20,6 +20,7 @@ const Rocket = ({ rocket }) => {
 
   // const [reserveBtnStatus, setReserveBtnStatus] = useState(false);
   const [reserveBtnText, setReserveBtnText] = useState('Reserve Rocket');
+  const [reserveBtnClass, setReserveBtnClass] = useState('reserve-btn');
 
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
@@ -29,8 +30,8 @@ const Rocket = ({ rocket }) => {
   // };
 
   const handleClick = () => {
-    // setAddBookStatus('pending');
     setReserveBtnText('Cancel Reservation');
+    setReserveBtnClass('reserve-btn-fade');
     dispatch(updateRocket(id));
     // setReserveBtnStatus(true)
   };
@@ -53,7 +54,7 @@ const Rocket = ({ rocket }) => {
         <li className="btn-link">
           <button
             type="button"
-            className="reserve-btn"
+            className={reserveBtnClass}
             onClick={handleClick}
           >
             { reserveBtnText }
