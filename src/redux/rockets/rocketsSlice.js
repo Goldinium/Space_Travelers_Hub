@@ -1,37 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// export const addRocketByThunk = createAsyncThunk(
-//   'rockets/addRocketByThunk',
-//   async (newRocketData, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.post(
-//         'https://api.spacexdata.com/v4/rockets', {
-//          newMissionData,
-//         },
-//       );
-//       const feedback = await response.data;
-//       return feedback;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   },
-// );
-
-export const removeRocketByThunk = createAsyncThunk(
-  'rockets/removeRocketByThunk',
-  async (id, { rejectWithValue }) => {
-    try {
-      const response = await axios.delete(id)(
-        'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Om6k22yKr6fTJWoqUNAC/books',
-      );
-      return response;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
-
 export const fetchRocketsByThunk = createAsyncThunk(
   'rockets/fetchRocketsByThunk',
   async (_, { rejectWithValue }) => {
