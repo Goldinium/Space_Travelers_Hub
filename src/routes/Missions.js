@@ -1,14 +1,14 @@
 // import { useSelector } from 'react-redux';
-import CurrentMissions from '../components/CurrentMissions';
+import Missions from '../components/Missions';
 
-export default function Missions() {
+export default function Mission() {
   // const { allcategories } = useSelector((store) => store.categories);
   return (
     <div className="app-container">
-      <div className="category-container">
-        <div id="category">
+      <div className="mission-container">
+        <div id="mission">
           <h1> Mission page </h1>
-          <CurrentMissions />
+          <Missions />
         </div>
       </div>
     </div>

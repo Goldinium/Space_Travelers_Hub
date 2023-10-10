@@ -5,7 +5,8 @@ import {
 import NavLink from './routes/NavLink';
 import Home from './routes/Home';
 import Profile from './routes/Profile';
-import Missions from './routes/Missions';
+import Mission from './routes/Missions';
+import Error from './routes/Error';
 import './App.css';
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
       <Route path="/" element={<NavLink />}>
         <Route index element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/missions" element={<Missions />} />
+        <Route path="/missions" element={<Mission />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/*" element={<Error />} />
       </Route>
     </Routes>
   );
