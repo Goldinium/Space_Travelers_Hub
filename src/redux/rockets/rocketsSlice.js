@@ -16,18 +16,29 @@ export const fetchRocketsByThunk = createAsyncThunk(
 const initialState = {
   allrockets: [],
   isLoading: 'idle',
+  error: undefined,
 };
 
 const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
-    updateRocket: (state, action) => {
+    reserveRocket: (state, action) => {
       const rocketId = action.payload;
-      state.allrockets.map((rocket) => {
-        if (rocket.id === rocketId) return rocket;
+      const newState = state.allrockets.map((rocket) => {
+        if (rocket.id !== rocketId) return rocket;
         return { ...rocket, reserved: true };
       });
+      return { state, allrockets: newState };
+    },
+
+    cancelRocket: (state, action) => {
+      const rocketId = action.payload;
+      const newState = state.allrockets.map((rocket) => {
+        if (rocket.id !== rocketId) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      return { state, allrockets: newState };
     },
   },
 
@@ -46,7 +57,6 @@ const rocketsSlice = createSlice({
               rocketname: rocketEntry[1].name,
               description: rocketEntry[1].description,
               flickrimages: rocketEntry[1].flickr_images[0],
-              reverved: false,
             });
           });
         };
@@ -63,6 +73,6 @@ export const allrockets = (state) => state.allrockets;
 export const rocketsloading = (state) => state.isLoading;
 
 export const {
-  updateRocket, extraReducers,
+  reserveRocket, cancelRocket, extraReducers,
 } = rocketsSlice.actions;
 export default rocketsSlice.reducer;

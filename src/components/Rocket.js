@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { updateRocket } from '../redux/rockets/rocketsSlice';
+import { reserveRocket, cancelRocket } from '../redux/rockets/rocketsSlice';
 
 const Rocket = ({ rocket }) => {
   const {
-    id, rocketname, description, flickrimages,
+    id, rocketname, description,
+    flickrimages, reserved,
   } = rocket;
 
   Rocket.propTypes = {
@@ -18,22 +19,12 @@ const Rocket = ({ rocket }) => {
 
   const dispatch = useDispatch();
 
-  const [reserveBtnText, setReserveBtnText] = useState('Reserve Rocket');
-  const [reserveBtnClass, setReserveBtnClass] = useState('reserve-btn');
-  const [reserveBtnBadge, setReserveBtnBadge] = useState('hidebadge');
-
   const handleClick = () => {
-    if (reserveBtnText === 'Reserve Rocket') {
-      setReserveBtnText('Cancel Reservation');
-      setReserveBtnClass('reserve-btn-fade');
-      setReserveBtnBadge('showbadge');
-      dispatch(updateRocket(id));
+    if (!reserved) {
+      dispatch(reserveRocket(id));
     }
-    if (reserveBtnText === 'Cancel Reservation') {
-      setReserveBtnText('Reserve Rocket');
-      setReserveBtnClass('reserve-btn');
-      setReserveBtnBadge('hidebadge');
-      dispatch(updateRocket(id));
+    if (reserved) {
+      dispatch(cancelRocket(id));
     }
   };
 
@@ -46,20 +37,25 @@ const Rocket = ({ rocket }) => {
         <li><h2>{rocketname}</h2></li>
         <li>
           <p>
-            <button type="button" className={reserveBtnBadge}>
-              reserved
-            </button>
+            {reserved
+              && (
+              <button type="button" disabled className="showbadge">
+                reserved
+              </button>
+              )}
             {description}
           </p>
         </li>
         <li className="btn-link">
-          <button
-            type="button"
-            className={reserveBtnClass}
-            onClick={handleClick}
-          >
-            { reserveBtnText }
-          </button>
+          {reserved ? (
+            <button type="button" className="reserve-btn-fade" onClick={handleClick}>
+              Cancel Reservation
+            </button>
+          ) : (
+            <button type="button" className="reserve-btn" onClick={handleClick}>
+              Reserve Rocket
+            </button>
+          )}
         </li>
       </ul>
     </div>
