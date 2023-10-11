@@ -19,6 +19,7 @@ function NavLink() {
           </ul>
         </nav>
       </div>
+      <hr className="nav-hr" />
       <Outlet />
     </div>
   );
