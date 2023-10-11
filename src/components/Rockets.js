@@ -8,10 +8,10 @@ export default function Rockets() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isLoading === 'idle') {
+    if (isLoading === 'true') {
       dispatch(fetchRocketsByThunk());
     }
-  }, [dispatch, isLoading]);
+  }, [dispatch, isLoading, error]);
 
   if (isLoading === 'pending') {
     return (<p>loading Rockets...</p>);
