@@ -6,7 +6,6 @@ const CurrentUser = () => {
   const reservedRockets = allrockets.filter((rocket) => rocket.reserved);
   const reservedMissions = allmissions.filter((mission) => mission.reserved);
 
-
   return (
     <div className="profile-container">
       <div className="profile-card">
