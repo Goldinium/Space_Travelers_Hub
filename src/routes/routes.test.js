@@ -7,7 +7,6 @@ import Rockets from '../components/Rockets';
 import CurrentUser from '../components/CurrentUser';
 import Planeticon from '../assets/Planeticon.png';
 import Missions from '../components/Missions';
-import MissionsPage from './MissionsPage';
 
 describe('route components renders correctly', () => {
   it('NavLinK components renders correctly', () => {
