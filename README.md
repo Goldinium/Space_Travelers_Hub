@@ -1,4 +1,4 @@
-# Space_Travel_Hub: Ometman and BEN
+# Space Travel Hub: Ometman and BEN
 <a name="readme-top"></a>
 
 <div align="center">
@@ -31,7 +31,7 @@
   - [📝 License ](#-license-)
 
 
-# 📖 Space_Travelers'_Hub Application <a name="about-project"></a>
+# 📖 Space Traveler's Hub Application <a name="about-project"></a>
 
 **A Demo Video: Introduction to this Project**
 --coming soon
