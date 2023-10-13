@@ -21,7 +21,17 @@ export default function Missions() {
     <div className="missions">
       {allmissions.length > 0 ? (
         <div className="book-container">
-          {allmissions.map((mission) => <Mission key={mission.id} mission={mission} />)}
+          <table className="mission-card">
+            <tr className="mission-details">
+              <th><h4>Mission</h4></th>
+              <th><h4>Description</h4></th>
+              <th><h4>Status</h4></th>
+              <th><h4>&nbsp;</h4></th>
+            </tr>
+            {allmissions.map(
+              (mission) => <Mission key={mission.id} mission={mission} />,
+            )}
+          </table>
         </div>
       ) : (
         <p className="no-mission">

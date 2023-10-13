@@ -1,20 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const removeMissionByThunk = createAsyncThunk(
-  'missions/removeMissionByThunk',
-  async (id, { rejectWithValue }) => {
-    try {
-      const response = await axios.delete(id)(
-        'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Om6k22yKr6fTJWoqUNAC/books',
-      );
-      return response;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
-
 export const fetchMissionsByThunk = createAsyncThunk(
   'missions/fetchMissionsByThunk',
   async (_, { rejectWithValue }) => {
@@ -46,6 +32,7 @@ const missionsSlice = createSlice({
       .addCase(fetchMissionsByThunk.fulfilled, (state, action) => {
         state.isLoading = 'succeeded';
         state.allmissions.length = 4;
+        console.log(state.allmissions.length);
         const theMissions = (missionsData = action.payload) => {
           const missionsEntries = Object.entries(missionsData);
           missionsEntries.forEach((missionEntry) => {
@@ -62,9 +49,6 @@ const missionsSlice = createSlice({
       .addCase(fetchMissionsByThunk.rejected, (state, action) => {
         state.isLoading = 'failed';
         state.error = action.error.message;
-      })
-      .addCase(removeMissionByThunk.fulfilled, (state, action) => {
-        console.log(state, action.payload);
       });
   },
 });
