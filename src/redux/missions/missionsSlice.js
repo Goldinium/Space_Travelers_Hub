@@ -36,7 +36,6 @@ const missionsSlice = createSlice({
           const missionsEntries = Object.entries(missionsData);
           missionsEntries.length = 4;
           missionsEntries.forEach((missionEntry) => {
-            console.log(missionEntry[1]);
             state.allmissions.push({
               id: missionEntry[1].mission_id,
               missionname: missionEntry[1].mission_name,
