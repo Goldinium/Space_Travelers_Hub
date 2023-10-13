@@ -8,10 +8,10 @@ export default function Rockets() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isLoading === 'idle') {
+    if (isLoading === 'true') {
       dispatch(fetchRocketsByThunk());
     }
-  }, [dispatch, isLoading]);
+  }, [dispatch, isLoading, error]);
 
   if (isLoading === 'pending') {
     return (<p>loading Rockets...</p>);
@@ -20,13 +20,13 @@ export default function Rockets() {
   if (error) return (<p>Oops! Seems something went wrong</p>);
 
   return (
-    <div className="books">
+    <div className="rockets">
       {allrockets.length > 0 ? (
-        <div className="book-container">
+        <div className="rockets-container">
           {allrockets.map((rocket) => <Rocket key={rocket.id} rocket={rocket} />)}
         </div>
       ) : (
-        <p className="no-books">
+        <p className="no-rockets">
           <i>Currently, No Rockets</i>
         </p>
       )}
