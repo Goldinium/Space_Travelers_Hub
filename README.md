@@ -115,12 +115,12 @@ In order to run this project you need:
   - Open your code editor (e.g. VS Code).
   - At the terminal, clone this repository to your desired directory.
   - Make sure you have node (www.nodejs.org)
-  - Run npm intall at the prompt
+  - Run `npm intall` at the prompt
     - Make sure all dependencies( eg: webpack, webpack dev server, css-loader, sass-loader)
 
 ### Usage
 To run the project locally, execute the following command:
-- Run npm run server (You should see a success result)
+- Run `npm run server` (You should see a success result)
 - Now access the app on port 3000 by entering the following in your browser:
 - http://localhost:3000
 
@@ -131,11 +131,11 @@ To run tests, run the following command:
 **************
 Initial Step:
 **************
-- mkdir .github/workflows
+- `mkdir .github/workflows`
 - copy the **linters.yml** file to the directory created above.
 - touch .gitignore if not created already and add **node_modules/** to it.
 - initialize npm to create package.json file by running the command: 
-> npm i -y      
+`npm i -y`     
 
 (here i for install & -y for saying yes to all)
 
@@ -143,11 +143,11 @@ Initial Step:
 For Stylelint
 **************
 - Run 
-> npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+`npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x`
 - Copy **.stylelintrc.json** to the root directory of your project.
 
 - Run 
-> npx stylelint "**/*.{css,scss}" 
+`npx stylelint "**/*.{css,scss}"`
 on the root of your directory of your project.
 - Fix linter errors.
 
@@ -155,25 +155,24 @@ on the root of your directory of your project.
 ESLint
 *******
 - Run 
-> npm install --save-dev eslint@7.x eslint-config-airbnb@18.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/eslint-parser@7.x @babel/core@7.x  @babel/plugin-syntax-jsx@7.x @babel/preset-env@7.x  @babel/preset-react@7.x
+`npm install --save-dev eslint@7.x eslint-config-airbnb@18.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/eslint-parser@7.x @babel/core@7.x  @babel/plugin-syntax-jsx@7.x @babel/preset-env@7.x  @babel/preset-react@7.x`
 - Copy **.eslintrc.json** to the root directory of your project.
 - Copy **.babelrc.json** to the root directory of your project.
 
 - Run 
-> npx eslint .  
-on the root of your directory of your project.
-- Fix linter errors.
+`npx eslint .`
+on the root of your directory of your project to fix JS linter errors.
 
 - For functionality testing, Run 
-> npm test or npm run test
-> All test must pass without error  
+`npm test` or `npm run test`
+- All test must pass without error  
 
 ### Deployment
 You can deploy this project using:
 - GitHub Pages from a specific branch (e.g. main). 
 - You can also used any cloud service like gcloud or Azure.
 - A deployed version can be found here:
-[https://... (Coming Soon)
+[#] (Coming Soon)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
