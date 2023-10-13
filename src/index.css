@@ -167,6 +167,54 @@ ul > li.btn-link {
   box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
 }
 
+.reserve-btn-mission {
+  padding: 10px;
+  color: rgb(134, 137, 140);
+  border-radius: 4px;
+  border: 1px solid rgb(134, 137, 140);
+  background-color: transparent;
+}
+
+.leave-btn-mission {
+  padding: 10px;
+  color: rgb(234, 32, 32);
+  border-radius: 4px;
+  border: 1px solid rgb(234, 32, 32);
+  background-color: transparent;
+}
+
+.inactive-btn-mission {
+  padding: 5px;
+  color: #fff;
+  font-weight: bold;
+  background: rgb(134, 137, 140);
+  border-radius: 4px;
+}
+
+.active-btn-mission {
+  padding: 5px;
+  color: #fff;
+  font-weight: bold;
+  background: #18A2B8;
+  border-radius: 4px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
 .reserve-btn:hover {
   background: #fff;
   color: blue;
@@ -175,6 +223,11 @@ ul > li.btn-link {
 /* add book form */
 
 .no-rocket {
+  text-align: center;
+  padding-top: 5%;
+}
+
+.no-mission {
   text-align: center;
   padding-top: 5%;
 }
@@ -250,4 +303,8 @@ ul > li.btn-link {
   margin-top: 3%;
   width: auto;
   text-align: center;
+}
+
+.mission-details {
+  list-style-type: none
 }

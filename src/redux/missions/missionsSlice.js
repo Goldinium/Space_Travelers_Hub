@@ -1,23 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// export const addRocketByThunk = createAsyncThunk(
-//   'rockets/addRocketByThunk',
-//   async (newRocketData, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.post(
-//         'https://api.spacexdata.com/v4/rockets', {
-//          newMissionData,
-//         },
-//       );
-//       const feedback = await response.data;
-//       return feedback;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   },
-// );
-
 export const removeMissionByThunk = createAsyncThunk(
   'missions/removeMissionByThunk',
   async (id, { rejectWithValue }) => {
@@ -62,15 +45,15 @@ const missionsSlice = createSlice({
       })
       .addCase(fetchMissionsByThunk.fulfilled, (state, action) => {
         state.isLoading = 'succeeded';
+        state.allmissions.length = 4;
         const theMissions = (missionsData = action.payload) => {
           const missionsEntries = Object.entries(missionsData);
           missionsEntries.forEach((missionEntry) => {
-            console.log(missionEntry[1].flickr_images[0]);
+            console.log(missionEntry[1]);
             state.allmissions.push({
-              id: missionEntry[1].id,
-              missionname: missionEntry[1].name,
+              id: missionEntry[1].mission_id,
+              missionname: missionEntry[1].mission_name,
               description: missionEntry[1].description,
-              flickrimages: missionEntry[1].flickr_images[0],
             });
           });
         };

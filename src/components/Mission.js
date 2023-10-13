@@ -5,39 +5,70 @@ import PropTypes from 'prop-types';
 
 const Mission = ({ mission }) => {
   const {
-    id, missionname, description, flickrimages,
+    missionname, description,
   } = mission;
-
-  console.log(id);
 
   Mission.propTypes = {
     mission: PropTypes.node.isRequired,
-    id: PropTypes.string.isRequired,
     missionname: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    flickrimages: PropTypes.node.isRequired,
   };
 
   // const dispatch = useDispatch();
 
   return (
     <div className="mission-card">
-      <div className="mission-image-container">
-        <img className="mission-image" src={flickrimages} alt="A mission" />
+      <div className="mission-details">
+        <table>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>&nbsp;</th>
+          </tr>
+          <tr>
+            <td><h2>{missionname}</h2></td>
+            <td>{description}</td>
+            <td>
+              {' '}
+              <div className="btn-link">
+                <span
+                  type="button"
+                  className="inactive-btn-mission"
+                >
+                  Not a member
+                </span>
+              </div>
+              <div className="btn-link">
+                <span
+                  type="button"
+                  className="active-btn-mission"
+                >
+                  Active member
+                </span>
+              </div>
+            </td>
+            <td>
+              <div className="btn-link">
+                <button
+                  type="button"
+                  className="reserve-btn-mission"
+                >
+                  Join Mission
+                </button>
+              </div>
+              <div className="btn-link">
+                <button
+                  type="button"
+                  className="leave-btn-mission"
+                >
+                  Leave Mission
+                </button>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
-      <ul className="mission-details">
-        <li><h2>{missionname}</h2></li>
-        <li><p>{description}</p></li>
-        <li className="btn-link">
-          <button
-            type="button"
-            className="reserve-btn"
-            // onClick={dispatch(removeMissionByThunk(id))}
-          >
-            Reserve Mission
-          </button>
-        </li>
-      </ul>
     </div>
   );
 };

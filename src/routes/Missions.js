@@ -7,7 +7,7 @@ export default function Mission() {
     <div className="app-container">
       <div className="mission-container">
         <div id="mission">
-          <h1> Mission page </h1>
+          <h1> Missions page </h1>
           <Missions />
         </div>
       </div>

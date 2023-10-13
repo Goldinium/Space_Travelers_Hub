@@ -18,13 +18,13 @@ export default function Missions() {
   }
 
   return (
-    <div className="books">
+    <div className="missions">
       {allmissions.length > 0 ? (
         <div className="book-container">
           {allmissions.map((mission) => <Mission key={mission.id} mission={mission} />)}
         </div>
       ) : (
-        <p className="no-books">
+        <p className="no-mission">
           <i>Currently, No Missions</i>
         </p>
       )}
