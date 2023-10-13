@@ -6,7 +6,7 @@ import NavLink from './NavLink';
 import Rockets from '../components/Rockets';
 import CurrentUser from '../components/CurrentUser';
 import Planeticon from '../assets/Planeticon.png';
-import CurrentMissions from '../components/CurrentMissions';
+import Missions from '../components/Missions';
 
 describe('route components renders correctly', () => {
   it('NavLinK components renders correctly', () => {
@@ -36,7 +36,7 @@ describe('route components renders correctly', () => {
 
   it('Profile components renders correctly', () => {
     const profileComponent = jest.mock('./Profile', () => {
-      jest.mock('./CurrentUser');
+      jest.mock('../components/CurrentUser');
       return (
         <div className="app-container">
           <div className="profile-container">
@@ -52,13 +52,13 @@ describe('route components renders correctly', () => {
   });
 
   it('Missions components renders correctly', () => {
-    const missionsComponent = jest.mock('./Missions', () => {
-      jest.mock('./CurrentMissions');
+    const missionsComponent = jest.mock('./MissionsPage', () => {
+      jest.mock('../components/Missions');
       return (
         <div className="app-container">
           <div className="profile-container">
             <div id="profile">
-              <CurrentMissions />
+              <Missions />
             </div>
           </div>
         </div>

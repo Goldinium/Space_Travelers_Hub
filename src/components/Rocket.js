@@ -1,17 +1,17 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { reserveRocket, cancelRocket } from '../redux/rockets/rocketsSlice';
 
 const Rocket = ({ rocket }) => {
   const {
     id, rocketname, description,
     flickrimages, reserved,
+
   } = rocket;
 
   Rocket.propTypes = {
     rocket: PropTypes.node.isRequired,
-    id: PropTypes.string.isRequired,
     rocketname: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     flickrimages: PropTypes.node.isRequired,

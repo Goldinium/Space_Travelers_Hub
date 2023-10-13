@@ -120,7 +120,8 @@ ul.nav-items li a {
 }
 
 .rocket-image {
-  height: 400px;
+  height: 350px;
+  width: 80%;
   border-radius: 8px;
 }
 
@@ -139,16 +140,18 @@ ul.rocket-details {
   padding-left: 1%;
   background: #fff;
   list-style: none;
+  gap: 5%;
 }
 
 ul.rocket-details li {
   margin: 1%;
   text-align: left;
+  font-size: 1.1rem;
 }
 
 ul > li.btn-link {
   width: 20%;
-  height: 10%;
+  height: 15%;
 }
 
 .reserve-btn {
@@ -203,6 +206,7 @@ ul > li.btn-link {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 10%;
 }
 
 /* profile */
@@ -247,4 +251,8 @@ ul.profile-list > li {
   text-align: left;
   padding: 2%;
   background: #fff;
+}
+
+.mission-details {
+  list-style-type: none;
 }

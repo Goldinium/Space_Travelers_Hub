@@ -1,12 +1,11 @@
-import CurrentMissions from '../components/CurrentMissions';
+import Missions from '../components/Missions';
 
-export default function Missions() {
+export default function MissionsPage() {
   return (
     <div className="app-container">
       <div className="missions-container">
         <div id="missions">
-          <h1> Mission page </h1>
-          <CurrentMissions />
+          <Missions />
         </div>
       </div>
     </div>
