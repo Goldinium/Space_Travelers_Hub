@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { reserveRocket, cancelRocket } from '../redux/rockets/rocketsSlice';
 
 const Rocket = ({ rocket }) => {
   const {
-    rocketname, description, flickrimages,
+    id, rocketname, description,
+    flickrimages, reserved,
+
   } = rocket;
 
   Rocket.propTypes = {
@@ -13,6 +17,17 @@ const Rocket = ({ rocket }) => {
     flickrimages: PropTypes.node.isRequired,
   };
 
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    if (!reserved) {
+      dispatch(reserveRocket(id));
+    }
+    if (reserved) {
+      dispatch(cancelRocket(id));
+    }
+  };
+
   return (
     <div className="rocket-card">
       <div className="rocket-image-container">
@@ -20,14 +35,27 @@ const Rocket = ({ rocket }) => {
       </div>
       <ul className="rocket-details">
         <li><h2>{rocketname}</h2></li>
-        <li><p>{description}</p></li>
+        <li>
+          <p>
+            {reserved
+              && (
+              <button type="button" disabled className="showbadge">
+                reserved
+              </button>
+              )}
+            {description}
+          </p>
+        </li>
         <li className="btn-link">
-          <button
-            type="button"
-            className="reserve-btn"
-          >
-            Reserve Rocket
-          </button>
+          {reserved ? (
+            <button type="button" className="reserve-btn-fade" onClick={handleClick}>
+              Cancel Reservation
+            </button>
+          ) : (
+            <button type="button" className="reserve-btn" onClick={handleClick}>
+              Reserve Rocket
+            </button>
+          )}
         </li>
       </ul>
     </div>

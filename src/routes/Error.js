@@ -1,7 +1,11 @@
-export default function Error() {
+export default function ErrorPage() {
   return (
     <div className="app-container">
-      <span>Error 404 page not found</span>
+      <div id="error-page">
+        <h1>Oops! 404 Page</h1>
+        <p>Sorry, an unexpected error has occurred.</p>
+        <p>This is mostly because the Page does not exit.</p>
+      </div>
     </div>
   );
 }
