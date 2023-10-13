@@ -154,16 +154,6 @@ ul > li.btn-link {
   height: 15%;
 }
 
-.reserve-btn {
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background: rgb(36, 144, 255);
-  border-radius: 4px;
-  border: 1px solid rgb(36, 144, 255);
-  box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
-}
-
 .reserve-btn-fade {
   width: 100%;
   height: 100%;
@@ -188,12 +178,6 @@ ul > li.btn-link {
   display: none;
 }
 
-.reserve-btn:hover {
-  background: #fff;
-  color: blue;
-}
-
-
 .reserve-btn {
   width: 100%;
   height: 100%;
@@ -202,6 +186,11 @@ ul > li.btn-link {
   border-radius: 4px;
   border: 1px solid rgb(36, 144, 255);
   box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
+}
+
+.reserve-btn:hover {
+  background: #fff;
+  color: blue;
 }
 
 .reserve-btn-mission {
@@ -232,7 +221,7 @@ ul > li.btn-link {
   padding: 5px;
   color: #fff;
   font-weight: bold;
-  background: #18A2B8;
+  background: #18a2b8;
   border-radius: 4px;
 }
 
@@ -241,14 +230,15 @@ table {
   border-collapse: collapse;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+td,
+th {
+  border: 1px solid #ddd;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #ddd;
 }
 
 .no-rockets {
