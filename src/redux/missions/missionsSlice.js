@@ -73,6 +73,7 @@ export const allmissions = (state) => state.allmissions;
 export const missionsloading = (state) => state.isLoading;
 
 export const {
-  reserveMission, cancelMission, extraReducers,
+  reserveMission, cancelMission,
+  extraReducers,
 } = missionsSlice.actions;
 export default missionsSlice.reducer;
