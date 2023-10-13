@@ -13,6 +13,53 @@ const Mission = ({ mission }) => {
     missionname: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   };
+  const table = [];
+  // const missionsEntries = Object.entries(missionname);
+  const i = 0;
+  while (i < 5 && i + 1) {
+    table.push(
+      <tr>
+        <td><h2>{Mission.missionname}</h2></td>
+        <td>{Mission.description}</td>
+        <td>
+          <div className="btn-link">
+            <span
+              type="button"
+              className="inactive-btn-mission"
+            >
+              Not a member
+            </span>
+          </div>
+          <div className="btn-link">
+            <span
+              type="button"
+              className="active-btn-mission"
+            >
+              Active member
+            </span>
+          </div>
+        </td>
+        <td>
+          <div className="btn-link">
+            <button
+              type="button"
+              className="reserve-btn-mission"
+            >
+              Join Mission
+            </button>
+          </div>
+          <div className="btn-link">
+            <button
+              type="button"
+              className="leave-btn-mission"
+            >
+              Leave Mission
+            </button>
+          </div>
+        </td>
+      </tr>,
+    );
+  }
 
   // const dispatch = useDispatch();
 
@@ -26,47 +73,7 @@ const Mission = ({ mission }) => {
             <th>Status</th>
             <th>&nbsp;</th>
           </tr>
-          <tr>
-            <td><h2>{missionname}</h2></td>
-            <td>{description}</td>
-            <td>
-              {' '}
-              <div className="btn-link">
-                <span
-                  type="button"
-                  className="inactive-btn-mission"
-                >
-                  Not a member
-                </span>
-              </div>
-              <div className="btn-link">
-                <span
-                  type="button"
-                  className="active-btn-mission"
-                >
-                  Active member
-                </span>
-              </div>
-            </td>
-            <td>
-              <div className="btn-link">
-                <button
-                  type="button"
-                  className="reserve-btn-mission"
-                >
-                  Join Mission
-                </button>
-              </div>
-              <div className="btn-link">
-                <button
-                  type="button"
-                  className="leave-btn-mission"
-                >
-                  Leave Mission
-                </button>
-              </div>
-            </td>
-          </tr>
+          {table}
         </table>
       </div>
     </div>
