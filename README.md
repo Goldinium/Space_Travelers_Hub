@@ -1,18 +1,18 @@
-# React BookStore App: Ometman
+# Space_Travel_Hub: Ometman and BEN
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./ometman-logo.png" alt="logo" width="140"  height="auto" />
+  <img src="./ometman-logo.png" alt="logo" width="140"  height="auto" /> and <h1>BEN (Goldinium)</h1>
   <br/>
-  <h3><b>The REACT BOOKSTORE: by Ometman</b></h3>
-  <h5>"React Bookstore Website" is a website for another version of the earlier Awesome Books project. This is built to using React library and Redux for statemanagement. It allows the CURD functionalithy of creating, updating, reading and deleting or removing a book. The interface UI design is based on Zeplin design. It allows user to create books they have read and update or delete completed books. The category, title, author, completion and update and editing can be easily entered and tracked. The completed uses circular progress bar to indicate percentage completed. It is simple but nice and powerful, because it also consumes an API to support data availability and access. Though just a two page, Book and Category, I trust you will enjoy it!
+  <h3><b>The Space_Travel_Hub: by Ometman and Ben</b></h3>
+  <h5>"Space_Travel_Hub" is a dynamic website for space travelers and businesses. It is a pure JavaScript Extended application built on React library and Redux for state management. Space business owners can use it to manage mission bookings. Clients can make rocket and mission reservation, and also cancel a trip in a user profile page. The interface UI design is provided by Microverse. Both the rockets and missions data are from an API consumed to dynamically populate the rockets, missions and profile sections or pages. It is simple but nice and powerful. We trust you will enjoy it!
   
 </div>
 
 # 📗 Table of Contents
-- [React BookStore App: Ometman](#react-bookstore-app-ometman)
+- [Space\_Travel\_Hub: Ometman and BEN](#space_travel_hub-ometman-and-ben)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 React BookStore Application ](#-react-bookstore-application-)
+- [📖 Space\_Travelers'\_Hub Application ](#-space_travelers_hub-application-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -22,8 +22,7 @@
     - [Usage](#usage)
     - [Run tests](#run-tests)
     - [Deployment](#deployment)
-  - [👥 Author ](#-author-)
-    - [Authors](#authors)
+  - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -32,7 +31,7 @@
   - [📝 License ](#-license-)
 
 
-# 📖 React BookStore Application <a name="about-project"></a>
+# 📖 Space_Travelers'_Hub Application <a name="about-project"></a>
 
 **A Demo Video: Introduction to this Project**
 --coming soon
@@ -43,11 +42,12 @@
  - Desktop: 768px or wider.
 
 >Project Brief :
- - It is built on a Zeplin design by Microverse.
- - It is a single page App, powered by React and Redux tools.
- - It displays 2 pages: Books and Category.
+ - It is built on a design by Microverse.
+ - It is a single page App, powered by React, Redux tools and axios.
+ - It displays 3 sections or pages: Rockets, Missions and Profile.
  - Content is dynamic, using React components and routes.
  - Dynamic State management was done with Redux.
+ - Data is fetch using axios, with Redux ThunkAPI.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -59,10 +59,12 @@
     <li>Pure JSX</>
     <li>CSS</li>
     <li>Webpack</li>
-    <li>Zeplin design</li>
+    <li>A Microverse design</li>
     <li>Jest Testing Framework </i>
+    <li>React Toolkit and Testing Library </i>
     <li>Base public API</li>
     <li>React and Redux </li>
+    <li>Axios</li>
   </ul>
 </details>
 
@@ -85,8 +87,8 @@
 
 - **Conversion of a Wireframe real design using Pure JSX/***
 - **Uses Jest testing and webpack bundled in the 'create-react-app**
-- **A simple Books disply page and Categories display page**
-- **The UI allows CRUD funtionality**
+- **A Dynamic Rockets, Missions and Profile pages**
+- **The UI allows CRUD type funtionality**
 - **Responsive Web Design: Desktop & Mobile**
 - **Consumes public API for dynamically content and access**
 
@@ -175,23 +177,31 @@ You can deploy this project using:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
-> Developed by: Omet Omeni (Ometman)
+> ## Developed by: 
 
-### Authors
+>> Omet Omeni (Ometman)
+
 - GitHub: [@ometman](https://github.com/ometman)
 - Twitter: [@twitterhandle](https://twitter.com/ometman)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ometman/)
+  
+>> BEN (Goldinium)
+
+- GitHub: [@goldinium](https://github.com/goldinium)
+- Twitter: [@twitterhandle](https://twitter.com/goldinium)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/goldinium/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Book Search functionality**
+- **Rocket Search functionality**
 - **Improved interactivity**
 - **Changing UI - look and feel**
 - **Improved Aesthetics & Design**
+- **Location and Contact information**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -199,7 +209,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ometman/react-bookstore-website/issues).
+Feel free to check the [issues page](https://github.com/Goldinium/Space_Travelers_Hub/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -213,7 +223,7 @@ As a tech enthusiast, your support is always appreciated. If you like this proje
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank especially [Microverse](https://www.microverse.org/) for inspiring this project & project guidelines. And, also thanks the the designer, Usman Suleiman Babakolo.
+I would like to thank especially [Microverse](https://www.microverse.org/) for inspiring this project & project guidelines. And, also thanks all friends for the encouragement.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
