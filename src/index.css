@@ -111,13 +111,17 @@ ul.nav-items li {
 
 /* rocket card */
 
+.rockets-container {
+  margin-top: 3%;
+  width: auto;
+  text-align: center;
+}
+
 .rocket-card {
   display: flex;
   justify-content: center;
   background: #fff;
   padding: 1rem;
-
-  /* border: 1px solid #d3d3d3; */
   margin-bottom: 2rem;
 }
 
@@ -167,74 +171,41 @@ ul > li.btn-link {
   box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
 }
 
+.reserve-btn-fade {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: gray;
+  border-radius: 4px;
+  border: 1px solid rgb(36, 144, 255);
+  box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
+}
+
+.showbadge {
+  display: inline-block;
+  color: #fff;
+  background: rgb(48, 161, 184);
+  border-radius: 1px;
+  border: none;
+  padding: 0.3% 1%;
+  margin-right: 1%;
+}
+
+.hidebadge {
+  display: none;
+}
+
 .reserve-btn:hover {
   background: #fff;
   color: blue;
 }
-
-/* add book form */
 
 .no-rocket {
   text-align: center;
   padding-top: 5%;
 }
 
-.newbookform-title {
-  padding-left: 1rem;
-}
-
-.form-container {
-  margin: 2rem;
-  margin-bottom: 3rem;
-}
-
-.newbookform {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.booktitle {
-  width: 50%;
-  height: 2rem;
-  margin: 1.2rem auto;
-}
-
-.bookauthor {
-  width: 20%;
-  height: 2rem;
-  margin: 1.2rem auto;
-}
-
-.newbookform,
-.booktitle,
-.bookauthor {
-  border-radius: 4px;
-}
-
-.booktitle,
-.bookauthor {
-  padding: 0.5%;
-}
-
-.submitbtn {
-  width: 20%;
-  height: 2rem;
-  margin: 1.2rem auto;
-}
-
-/* update progress */
-.updatebtn,
-.submitbtn {
-  color: #fff;
-  background: rgb(36, 144, 255);
-  margin-top: 1rem;
-  width: 10rem;
-  padding: 1px;
-  height: 3rem;
-  border-radius: 4px;
-  border: none;
-}
+/* error page */
 
 #error-page {
   display: flex;
@@ -242,12 +213,4 @@ ul > li.btn-link {
   align-items: center;
   justify-content: center;
   width: 100%;
-}
-
-/* rockets */
-
-.rockets-container {
-  margin-top: 3%;
-  width: auto;
-  text-align: center;
 }

@@ -1,14 +1,12 @@
-import React from 'react';
-// import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { removeRocketByThunk } from '../redux/rockets/rocketsSlice';
+import { updateRocket } from '../redux/rockets/rocketsSlice';
 
 const Rocket = ({ rocket }) => {
   const {
     id, rocketname, description, flickrimages,
   } = rocket;
-
-  console.log(id);
 
   Rocket.propTypes = {
     rocket: PropTypes.node.isRequired,
@@ -18,7 +16,26 @@ const Rocket = ({ rocket }) => {
     flickrimages: PropTypes.node.isRequired,
   };
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  const [reserveBtnText, setReserveBtnText] = useState('Reserve Rocket');
+  const [reserveBtnClass, setReserveBtnClass] = useState('reserve-btn');
+  const [reserveBtnBadge, setReserveBtnBadge] = useState('hidebadge');
+
+  const handleClick = () => {
+    if (reserveBtnText === 'Reserve Rocket') {
+      setReserveBtnText('Cancel Reservation');
+      setReserveBtnClass('reserve-btn-fade');
+      setReserveBtnBadge('showbadge');
+      dispatch(updateRocket(id));
+    }
+    if (reserveBtnText === 'Cancel Reservation') {
+      setReserveBtnText('Reserve Rocket');
+      setReserveBtnClass('reserve-btn');
+      setReserveBtnBadge('hidebadge');
+      dispatch(updateRocket(id));
+    }
+  };
 
   return (
     <div className="rocket-card">
@@ -27,14 +44,21 @@ const Rocket = ({ rocket }) => {
       </div>
       <ul className="rocket-details">
         <li><h2>{rocketname}</h2></li>
-        <li><p>{description}</p></li>
+        <li>
+          <p>
+            <button type="button" className={reserveBtnBadge}>
+              reserved
+            </button>
+            {description}
+          </p>
+        </li>
         <li className="btn-link">
           <button
             type="button"
-            className="reserve-btn"
-            // onClick={dispatch(removeRocketByThunk(id))}
+            className={reserveBtnClass}
+            onClick={handleClick}
           >
-            Reserve Rocket
+            { reserveBtnText }
           </button>
         </li>
       </ul>
