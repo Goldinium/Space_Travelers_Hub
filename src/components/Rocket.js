@@ -1,24 +1,17 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { removeRocketByThunk } from '../redux/rockets/rocketsSlice';
 
 const Rocket = ({ rocket }) => {
   const {
-    id, rocketname, description, flickrimages,
+    rocketname, description, flickrimages,
   } = rocket;
-
-  console.log(id);
 
   Rocket.propTypes = {
     rocket: PropTypes.node.isRequired,
-    id: PropTypes.string.isRequired,
     rocketname: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     flickrimages: PropTypes.node.isRequired,
   };
-
-  // const dispatch = useDispatch();
 
   return (
     <div className="rocket-card">
@@ -32,7 +25,6 @@ const Rocket = ({ rocket }) => {
           <button
             type="button"
             className="reserve-btn"
-            // onClick={dispatch(removeRocketByThunk(id))}
           >
             Reserve Rocket
           </button>
