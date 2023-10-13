@@ -5,13 +5,14 @@ import { fetchRocketsByThunk } from '../redux/rockets/rocketsSlice';
 
 export default function Rockets() {
   const { allrockets, isLoading, error } = useSelector((store) => store.rockets);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isLoading === 'idle') {
+    if (isLoading === 'true') {
       dispatch(fetchRocketsByThunk());
     }
-  }, [dispatch, isLoading]);
+  }, [dispatch, isLoading, error]);
 
   if (isLoading === 'pending') {
     return (<p>loading Rockets...</p>);
