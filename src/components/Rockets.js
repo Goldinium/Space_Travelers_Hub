@@ -4,7 +4,7 @@ import Rocket from './Rocket';
 import { fetchRocketsByThunk } from '../redux/rockets/rocketsSlice';
 
 export default function Rockets() {
-  const { allrockets, isLoading } = useSelector((store) => store.rockets);
+  const { allrockets, isLoading, error } = useSelector((store) => store.rockets);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,8 +14,10 @@ export default function Rockets() {
   }, [dispatch, isLoading]);
 
   if (isLoading === 'pending') {
-    return (<p>Loading...</p>);
+    return (<p>loading Rockets...</p>);
   }
+
+  if (error) return (<p>Oops! Seems something went wrong</p>);
 
   return (
     <div className="books">

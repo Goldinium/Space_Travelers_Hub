@@ -43,32 +43,16 @@ a {
   text-decoration: none;
 }
 
-#root {
+/* #root {
   display: flex;
   height: 100%;
   width: 100%;
-}
-
-.root-container {
-  margin: 8rem 6rem;
-  width: 100%;
-  height: 120%;
-  background: rgb(250, 250, 250);
-}
+} */
 
 .store-container {
   width: auto;
   margin-top: 3rem;
   padding: 0 6rem;
-}
-
-#bookstore {
-  background-color: rgb(250, 250, 250);
-  border: 0 solid #d3d3d3;
-  box-shadow: 3px 1px 10px 3px #d3d3d3;
-  border-radius: 4px;
-  height: 100%;
-  margin-bottom: 2rem;
 }
 
 .header {
@@ -111,7 +95,9 @@ ul.nav-items li {
 
 /* rocket card */
 
-.rockets-container {
+.rockets-container,
+.mission-container,
+.profile-container {
   margin-top: 3%;
   width: auto;
   text-align: center;
