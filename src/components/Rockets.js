@@ -5,6 +5,7 @@ import { fetchRocketsByThunk } from '../redux/rockets/rocketsSlice';
 
 export default function Rockets() {
   const { allrockets, isLoading, error } = useSelector((store) => store.rockets);
+
   const dispatch = useDispatch();
 
   useEffect(() => {

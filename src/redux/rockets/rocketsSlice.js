@@ -70,10 +70,12 @@ const rocketsSlice = createSlice({
   },
 });
 
+export const axiosAPI = axios;
 export const allrockets = (state) => state.allrockets;
 export const rocketsloading = (state) => state.isLoading;
 
 export const {
   reserveRocket, cancelRocket, extraReducers,
 } = rocketsSlice.actions;
+// export const { iniitialState } = rocketsSlice.initialState;
 export default rocketsSlice.reducer;
