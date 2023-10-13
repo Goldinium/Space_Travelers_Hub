@@ -190,8 +190,6 @@ You can deploy this project using:
 >> BEN (Goldinium)
 
 - GitHub: [@goldinium](https://github.com/goldinium)
-- Twitter: [@twitterhandle](https://twitter.com/goldinium)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/goldinium/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
