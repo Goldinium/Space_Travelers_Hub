@@ -31,7 +31,7 @@ const Mission = ({ mission }) => {
     <tr>
       <td>{missionname}</td>
       <td>{description}</td>
-      <td name="status">
+      <td width="10%" name="status">
         <div className="btn-link">
           {reserved ? (
             <span
@@ -50,7 +50,7 @@ const Mission = ({ mission }) => {
           )}
         </div>
       </td>
-      <td>
+      <td width="10%">
         <div className="btn-link">
           {reserved ? (
             <button
