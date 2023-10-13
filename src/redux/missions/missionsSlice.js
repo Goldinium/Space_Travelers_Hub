@@ -24,20 +24,20 @@ const missionsSlice = createSlice({
   reducers: {
     reserveMission: (state, action) => {
       const missionId = action.payload;
-      const newMissionState = state.allrockets.map((mission) => {
+      const newMissionState = state.allmissions.map((mission) => {
         if (mission.id !== missionId) return mission;
         return { ...mission, reserved: true };
       });
-      return { state, allrockets: newMissionState };
+      return { state, allmissions: newMissionState };
     },
-  
+
     cancelMission: (state, action) => {
       const missionId = action.payload;
-      const newMissionState = state.allrockets.map((mission) => {
-        if (missionId !== missionId) return mission;
+      const newMissionState = state.allmissions.map((mission) => {
+        if (mission.id !== missionId) return mission;
         return { ...mission, reserved: false };
       });
-      return { state, allrockets: newMissionState };
+      return { state, allmissions: newMissionState };
     },
   },
 
@@ -73,6 +73,6 @@ export const allmissions = (state) => state.allmissions;
 export const missionsloading = (state) => state.isLoading;
 
 export const {
-  extraReducers,
+  reserveMission, cancelMission, extraReducers,
 } = missionsSlice.actions;
 export default missionsSlice.reducer;
