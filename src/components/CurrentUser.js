@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 const CurrentUser = () => {
   const { allrockets } = useSelector((store) => store.rockets);
+  const { allmissions } = useSelector((store) => store.missions);
   const reservedRockets = allrockets.filter((rocket) => rocket.reserved);
   const reservedMissions = allmissions.filter((mission) => mission.reserved);
 
@@ -14,7 +15,7 @@ const CurrentUser = () => {
           {reservedMissions.length > 0
             ? reservedMissions.map((mission) => (
               <li key={mission.id}>
-                { misson.missionname }
+                { mission.missionname }
               </li>
             )) : (
               <p>No reserved Mission</p>
