@@ -3,18 +3,19 @@ import { useSelector } from 'react-redux';
 
 const CurrentUser = () => {
   const { allrockets } = useSelector((store) => store.rockets);
+  const { allmissions } = useSelector((store) => store.missions);
   const reservedRockets = allrockets.filter((rocket) => rocket.reserved);
+  const reservedMissions = allmissions.filter((mission) => mission.reserved);
 
   return (
     <div className="profile-container">
       <div className="profile-card">
         <h2 className="profile-heading">My Missions</h2>
         <ul className="profile-list">
-          {/* // just temporal stuff below, to hold space */}
-          {reservedRockets.length > 0
-            ? reservedRockets.map((rocket) => (
-              <li key={rocket.id}>
-                missons
+          {reservedMissions.length > 0
+            ? reservedMissions.map((mission) => (
+              <li key={mission.id}>
+                { mission.missionname }
               </li>
             )) : (
               <p>No reserved Mission</p>
