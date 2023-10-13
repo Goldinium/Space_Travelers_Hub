@@ -1,6 +1,7 @@
 import {
   Routes,
   Route,
+  BrowserRouter,
 } from 'react-router-dom';
 import NavLink from './routes/NavLink';
 import Home from './routes/Home';
@@ -10,14 +11,16 @@ import './App.css';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<NavLink />}>
-        <Route index element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/missions" element={<Missions />} />
-        <Route path="/profile" element={<Profile />} />
-      </Route>
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<NavLink />}>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/missions" element={<Missions />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
