@@ -32,9 +32,9 @@ const missionsSlice = createSlice({
       .addCase(fetchMissionsByThunk.fulfilled, (state, action) => {
         state.isLoading = 'succeeded';
         state.allmissions.length = 4;
-        console.log(state.allmissions.length);
         const theMissions = (missionsData = action.payload) => {
           const missionsEntries = Object.entries(missionsData);
+          missionsEntries.length = 4;
           missionsEntries.forEach((missionEntry) => {
             console.log(missionEntry[1]);
             state.allmissions.push({
