@@ -39,6 +39,10 @@ body {
   background: #fff;
 }
 
+.currentlink {
+  text-decoration: underline;
+}
+
 a {
   text-decoration: none;
 }

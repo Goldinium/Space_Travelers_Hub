@@ -13,9 +13,9 @@ function NavLinks() {
         </div>
         <nav>
           <ul className="nav-items">
-            <li><NavLink to="home">Rockets</NavLink></li>
-            <li><NavLink to="missions">Missions</NavLink></li>
-            <li><NavLink to="profile">|&nbsp;&nbsp;&nbsp;My Profile</NavLink></li>
+            <li><NavLink to="home" className={({ isActive }) => (isActive ? 'currentlink' : '')}>Rockets</NavLink></li>
+            <li><NavLink to="missions" className={({ isActive }) => (isActive ? 'currentlink' : '')}>Missions</NavLink></li>
+            <li><NavLink to="profile" className={({ isActive }) => (isActive ? 'currentlink' : '')}>|&nbsp;&nbsp;&nbsp;My Profile</NavLink></li>
           </ul>
         </nav>
       </div>
