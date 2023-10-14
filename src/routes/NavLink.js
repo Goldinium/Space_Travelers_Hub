@@ -1,7 +1,7 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 import Planeticon from '../assets/Planeticon.png';
 
-function NavLink() {
+function NavLinks() {
   return (
     <div className="root-container">
       <div className="header">
@@ -13,9 +13,9 @@ function NavLink() {
         </div>
         <nav>
           <ul className="nav-items">
-            <li><Link to="home">Rockets</Link></li>
-            <li><Link to="missions">Missions</Link></li>
-            <li><Link to="profile">|&nbsp;&nbsp;&nbsp;My Profile</Link></li>
+            <li><NavLink to="home">Rockets</NavLink></li>
+            <li><NavLink to="missions">Missions</NavLink></li>
+            <li><NavLink to="profile">|&nbsp;&nbsp;&nbsp;My Profile</NavLink></li>
           </ul>
         </nav>
       </div>
@@ -25,4 +25,4 @@ function NavLink() {
   );
 }
 
-export default NavLink;
+export default NavLinks;

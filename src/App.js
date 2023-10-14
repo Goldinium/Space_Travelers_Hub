@@ -3,18 +3,18 @@ import {
   Route,
   BrowserRouter,
 } from 'react-router-dom';
-import NavLink from './routes/NavLink';
 import Home from './routes/Home';
 import Profile from './routes/Profile';
 import MissionsPage from './routes/MissionsPage';
 import Error from './routes/Error';
 import './App.css';
+import NavLinks from './routes/NavLink';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<NavLink />}>
+        <Route path="/" element={<NavLinks />}>
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/missions" element={<MissionsPage />} />
